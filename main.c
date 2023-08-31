@@ -3,12 +3,14 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <wchar.h>
 #include <locale.h>
-#include <signal.h>
 int devnull;
 uint32_t devnull_uint;
 int main (int argc, char **argv){
+    if (argc < 2){
+        printf("Not enough arguments\n");
+        return 1;
+    }
     uint16_t n, i, j, k, x, y, idx;
     uint32_t frames = 6953;
     setlocale(LC_CTYPE, "");
@@ -16,6 +18,7 @@ int main (int argc, char **argv){
     wchar_t braille[256];
     braille[0] = 0x2800;
     clear();
+
     for(i = 1; i < 256; i++){
         braille[i] = braille[i - 1] + 1;
         printw("%lc ", braille[i]);

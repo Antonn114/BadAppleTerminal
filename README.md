@@ -18,7 +18,7 @@ To build this program, you will need:
 Build using gcc:
 
 ```
-gcc -o BadApple main.c
+gcc -o BadApple main.c -lpng -lncurses
 ```
 
 ## Usage
