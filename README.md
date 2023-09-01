@@ -34,4 +34,4 @@ The arguments for the program are as follows:
 
 ## Known issues
 
-- the audio will play until it actually ends and not when the program finishes on its own.
+- If your audio is longer than how the video will play, the audio will not stop unless you kill the `ffplay` process yourself 
